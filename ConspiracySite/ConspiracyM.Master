@@ -1,0 +1,270 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ConspiracyM.master.cs" Inherits="ConspiracySite.ConspiracyM" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+
+
+
+   
+
+       <!--חלק העיצוב של דף הדף -->
+    <title>Master Page site</title>
+
+    <style>
+       
+        body{direction:rtl;margin-left:50px;margin-right:50px;background-color:#062121}
+        .mpTable {
+            border: 1px  solid #1c2841;
+            margin: 0px auto;
+            width: 1600px;
+     
+        }
+
+        .mpHeader        {width: 1600px;height:150px; border: 1px  solid #1c2841; background-color:#ab7d7d }
+        .mpMenu          { height:35px;border: 1px  solid #1c2841;text-align:center;margin:1px;background-color:#ab7d7d}
+        .mpMainPage      { height:450px;border: 1px  solid #1c2841;padding:20px;background-color:#ab7d7d}
+        .mpFoother       {  height:30px;border: 1px  solid #1c2841;text-align:center;background-color:#ab7d7d}
+       
+        .menuPics0    { height:70px;width:210px;margin:10px;margin-right:50px }
+
+         .menuPics    { height:60px;width:200px;margin-top:4px; }
+        h1 { color: #000039;text-align:center;   font-size:30pt;}
+        h3 {
+            color: #264348;
+             text-align: center;
+            font-size: 25pt;
+            font-weight: bold
+        }
+        }
+        img {height: 80px}
+    </style>
+
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+
+    <script>
+        function showIcon(pic, str)
+        {
+            pic.src = str;
+        }
+    </script>
+
+    <script type="text/javascript" language="javascript">
+        setInterval("myTimer()", 1000);
+
+        function myTimer()
+        {
+            var d = new Date();
+            var t = d.toLocaleTimeString();
+            document.getElementById("myTimer").innerHTML = t;
+        }
+
+    </script>
+     <!------------- -->
+</head>
+<body>
+    
+        <table class="mpTable">
+            <tr class  ="mpHeader">
+                
+                <td><%=loginMsg %>
+
+
+           <% if (Session["admin"] == "yes")
+               {%>
+                <!--דף מנהל--->
+                <a href = "managarP.aspx">   <img src="pics/menu/ManagerP0.png" class="menuPics0" id ="ManagerP" 
+                                  onmouseover="showIcon(ManagerP,'pics/menu/ManagerP1.png')"
+                                  onmouseout="showIcon(ManagerP,'pics/menu/ManagerP0.png')"
+                                  /> 
+                 </a><br />
+
+                
+
+                
+
+                    
+                <a href = 'LogOut.aspx'><img src="pics/menu/Logout0.png"  class="menuPics0" id ="LogOut"
+                     onmouseover="showIcon(LogOut,'pics/menu/Logout1.png')"
+                     onmouseout="showIcon(LogOut,'pics/menu/Logout0.png')"
+                    />
+
+                </a><br />
+
+
+            <%}
+              else
+              {%>
+
+
+                         <%
+                        if (Session["uName"] == "אורח")
+                        {  %> 
+                                            <!--לא מחובר   --->
+
+
+                          <a href = "LogIn.aspx"> <img src="pics/menu/LogIn0.png" class="menuPics0" id ="LogIn"
+                               onmouseover="showIcon(LogIn,'pics/menu/LogIn1.png')"
+                              onmouseout="showIcon(LogIn,'pics/menu/LogIn0.png')"
+                              />
+                             
+                          </a><br />
+
+
+                            <a href = "Register.aspx"><img src="pics/menu/Register0.png" class="menuPics0" id ="Register"
+                                 onmouseover="showIcon(Register,'pics/menu/Register1.png')"
+                                onmouseout="showIcon(Register,'pics/menu/Register0.png')"
+                                />       
+                                </a><br />
+
+                            <!--//menuStr = menu + menuStr; מה זה?--->
+
+
+
+                      <%}
+                        else
+                        {%>
+
+                                <!--מחובר--->
+                            <a href = "LogOut.aspx"><img src="pics/menu/Logout0.png" 
+
+                                class="menuPics0" id ="LogOut"
+                                onmouseover="showIcon(LogOut,'pics/menu/Logout1.png')"
+                                 onmouseout="showIcon(LogOut,'pics/menu/Logout0.png')"
+                                />
+                                </a><br />
+                            <a href = "CultureQuestions.aspx"><img src="pics/menu/surv0.png"
+                                class="menuPics0" id ="CultureQuestions"
+                                 onmouseover="showIcon(CultureQuestions,'pics/menu/surv1.png')"
+                                 onmouseout="showIcon(CultureQuestions,'pics/menu/surv0.png')"
+
+                                />
+                               
+                                </a><br />
+
+
+
+                      <%} %>
+
+
+            <%}%> 
+
+
+                </td>
+
+
+                <td >  <h1 id="top"> ברוכים הבאים למימד הקונספירציות האינטרנטי </h1>
+                                        <h1>תוכלו למצוא כאן קונספירציות מופרחות ומטורפות מכול הסוגים </h1>
+                                       
+                    
+                </td>
+                                <td> <h1 id ="myTimer" style="color:#062121;text-align:center;"> </h1></td>
+            </tr>
+             <tr>
+                <td colspan="3" class ="mpMenu">
+
+                    <a href="HomeP.aspx">
+                      <img src="pics/menu/home0.png" class="menuPics" id ="home"
+                          onmouseover="showIcon(home,'pics/menu/home1.png')"
+                          onmouseout="showIcon(home,'pics/menu/home0.png')"
+                            />
+                    </a>
+
+                    <a href="CultureNSociety.aspx">
+                        <img src="pics/menu/CultureAndCociety0.png" class="menuPics" id ="CultureAndCociety"
+                        onmouseover="showIcon(CultureAndCociety,'pics/menu/CultureAndCociety1.png')"
+                        onmouseout="showIcon(CultureAndCociety,'pics/menu/CultureAndCociety0.png')"
+
+                            />
+
+                    </a>
+
+                    <a href="JudaismNIsrael.aspx"> <img src="pics/menu/JudaismAndIsrael0.png" class="menuPics" id ="JudaismAndIsrael"
+                         onmouseover="showIcon(JudaismAndIsrael,'pics/menu/JudaismAndIsrael1.png')"
+                        onmouseout="showIcon(JudaismAndIsrael,'pics/menu/JudaismAndIsrael0.png')"
+
+                        />
+
+                    </a>
+
+                    <a href="Politics.aspx"> <img src="pics/menu/politics0.png" class="menuPics" id ="politics"
+                        onmouseover="showIcon(politics,'pics/menu/politics1.png')"
+                        onmouseout="showIcon(politics,'pics/menu/politics0.png')"
+
+                        />
+
+                    </a>
+
+                    <a href="RealStuff.aspx"> <img src="pics/menu/RealThings0.png" class="menuPics" id ="RealThings"
+                        onmouseover="showIcon(RealThings,'pics/menu/RealThings1.png')"
+                        onmouseout="showIcon(RealThings,'pics/menu/RealThings0.png')"
+
+
+                        />
+
+                    </a>
+
+                    <a href="ScienceNtechnology.aspx"> <img src="pics/menu/ScienceAndTechnology0.png" class="menuPics" id ="ScienceAndTechnology"
+                        onmouseover="showIcon(ScienceAndTechnology,'pics/menu/ScienceAndTechnology1.png')"
+                         onmouseout="showIcon(ScienceAndTechnology,'pics/menu/ScienceAndTechnology0.png')"
+
+                        
+                        />
+
+                    </a>
+
+                    <a href="SecretSociety.aspx"> <img src="pics/menu/SecretSociety0.png" class="menuPics" id ="SecretSociety"
+                         onmouseover="showIcon(SecretSociety,'pics/menu/SecretSociety1.png')"
+                        onmouseout="showIcon(SecretSociety,'pics/menu/SecretSociety0.png')"
+
+
+                        />
+
+                    </a>
+                    
+
+                    <a href="LogInAdmin.aspx"><img src="pics/menu/ManagerLogin0.png" class="menuPics" id ="ManagerLogin"
+                          onmouseover="showIcon(ManagerLogin,'pics/menu/ManagerLogin1.png')"
+                        onmouseout="showIcon(ManagerLogin,'pics/menu/ManagerLogin0.png')"
+                        
+                        />
+                        
+
+                    </a>
+                    <br />
+                    <!----
+                    <a href="LogIn.aspx">LogIn.aspx</a>
+                    <a href="LogOut.aspx">LogOut.aspx</a>
+                    <a href="Register.aspx">Register.aspx</a>
+                    <a href="ShowTable.aspx">ShowTable.aspx</a>
+                        ---->
+                </td>
+            </tr>
+             <tr>
+                <td colspan="3"class =" mpMainPage">
+                      <!-- חלק התוכן של דף הדף  -->
+  
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+                                      <!----------- -->
+                </td>
+            </tr>
+             <tr>
+                <td colspan="2"class =" mpFoother">
+                    <h3>   
+                        <a href =" https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=new">האתר נבנה על ידי עדי לפין</a>  
+                    </h3>
+                </td>
+                 <td class =" mpFoother"> <h4>מונה מבקרים באתר :</h4><%= Application["counter"]%> </td>
+            </tr>
+        </table>
+
+        
+</body>
+</html>

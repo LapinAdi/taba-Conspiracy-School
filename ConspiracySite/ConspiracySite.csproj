@@ -1,0 +1,723 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D062E43D-1E28-4854-A6C4-85E5179E16B9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConspiracySite</RootNamespace>
+    <AssemblyName>ConspiracySite</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44360</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.4.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="AntisemiticConspiracies.aspx" />
+    <Content Include="Area51.aspx" />
+    <Content Include="BillGates.aspx" />
+    <Content Include="ComplexQuery.aspx" />
+    <Content Include="CompTry.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Covid19.aspx" />
+    <Content Include="CultureNSociety.aspx" />
+    <Content Include="CultureQuestions.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="DeleteRcord.aspx" />
+    <Content Include="DeleteUser.aspx" />
+    <Content Include="DonaldJTrump.aspx" />
+    <Content Include="EdwardSnowden.aspx" />
+    <Content Include="ElonMusk.aspx" />
+    <Content Include="ElvisPresley.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="FlatEarth.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="galery.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="ConspiracyM.Master" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="HomeP.aspx" />
+    <Content Include="Illuminati.aspx" />
+    <Content Include="ImportantPersonalities.aspx" />
+    <Content Include="JohnFitzgeraldKennedy.aspx" />
+    <Content Include="JudaismNIsrael.aspx" />
+    <Content Include="KimJongUn.aspx" />
+    <Content Include="LandingOnMoon.aspx" />
+    <Content Include="LizardPeople.aspx" />
+    <Content Include="LogIn.aspx" />
+    <Content Include="LogInAdmin.aspx" />
+    <Content Include="LogOut.aspx" />
+    <Content Include="managarP.aspx" />
+    <Content Include="MichaelJackson.aspx" />
+    <Content Include="MKUltra.aspx" />
+    <Content Include="PaulMccartney.aspx" />
+    <Content Include="pics\10steps.png" />
+    <Content Include="pics\anticemi.png" />
+    <Content Include="pics\Area51 0.png" />
+    <Content Include="pics\Area51 1.png" />
+    <Content Include="pics\arrow.png" />
+    <Content Include="pics\back1.png" />
+    <Content Include="pics\bake_removebg.png" />
+    <Content Include="pics\bill Gates0.jpg" />
+    <Content Include="pics\bill Gates1.jpg" />
+    <Content Include="pics\covid 19 0.png" />
+    <Content Include="pics\covid 19 1.png" />
+    <Content Include="pics\Donald J Trump0.png" />
+    <Content Include="pics\Donald J Trump1.png" />
+    <Content Include="pics\EdwardSnowden0.png" />
+    <Content Include="pics\EdwardSnowden1.png" />
+    <Content Include="pics\Elon Musk0.jpg" />
+    <Content Include="pics\Elon Musk1.jpg" />
+    <Content Include="pics\flat earth 0.jpg" />
+    <Content Include="pics\flat earth 1.jpg" />
+    <Content Include="pics\galery.png" />
+    <Content Include="pics\galery\0 .png" />
+    <Content Include="pics\galery\1 .png" />
+    <Content Include="pics\galery\10.png" />
+    <Content Include="pics\galery\11.png" />
+    <Content Include="pics\galery\2.png" />
+    <Content Include="pics\galery\3.png" />
+    <Content Include="pics\galery\4.png" />
+    <Content Include="pics\galery\5.png" />
+    <Content Include="pics\galery\6.png" />
+    <Content Include="pics\galery\7.png" />
+    <Content Include="pics\galery\8.png" />
+    <Content Include="pics\galery\9.png" />
+    <Content Include="pics\home page0.png" />
+    <Content Include="pics\home page1.jpg" />
+    <Content Include="pics\Illuminati 0.png" />
+    <Content Include="pics\Illuminati 1.png" />
+    <Content Include="pics\Illuminati 2.png" />
+    <Content Include="pics\Illuminati 4.png" />
+    <Content Include="pics\Important personalities.png" />
+    <Content Include="pics\john Fitzgerald Kennedy0.jpg" />
+    <Content Include="pics\John Fitzgerald Kennedy1.jpg" />
+    <Content Include="pics\John Fitzgerald Kennedy2.jpg" />
+    <Content Include="pics\Kim jong un 0.jpg" />
+    <Content Include="pics\Kim jong un 1.jpg" />
+    <Content Include="pics\landing moon0.jpg" />
+    <Content Include="pics\landing moon1.jpg" />
+    <Content Include="pics\Lizard people0.png" />
+    <Content Include="pics\Lizard people1.png" />
+    <Content Include="pics\menu\ComplexQuery0.png" />
+    <Content Include="pics\menu\ComplexQuery1.png" />
+    <Content Include="pics\menu\CultureAndCociety0.png" />
+    <Content Include="pics\menu\CultureAndCociety1.png" />
+    <Content Include="pics\menu\DeleteUser0.png" />
+    <Content Include="pics\menu\home0.png" />
+    <Content Include="pics\menu\home1.png" />
+    <Content Include="pics\menu\JudaismAndIsrael0.png" />
+    <Content Include="pics\menu\JudaismAndIsrael1.png" />
+    <Content Include="pics\menu\LogIn0.png" />
+    <Content Include="pics\menu\LogIn1.png" />
+    <Content Include="pics\menu\Logout0.png" />
+    <Content Include="pics\menu\Logout1.png" />
+    <Content Include="pics\menu\ManagerLogin0.png" />
+    <Content Include="pics\menu\ManagerLogin1.png" />
+    <Content Include="pics\menu\ManagerP0.png" />
+    <Content Include="pics\menu\ManagerP1.png" />
+    <Content Include="pics\menu\politics0.png" />
+    <Content Include="pics\menu\politics1.png" />
+    <Content Include="pics\menu\RealThings0.png" />
+    <Content Include="pics\menu\RealThings1.png" />
+    <Content Include="pics\menu\Register0.png" />
+    <Content Include="pics\menu\Register1.png" />
+    <Content Include="pics\menu\ScienceAndTechnology0.png" />
+    <Content Include="pics\menu\ScienceAndTechnology1.png" />
+    <Content Include="pics\menu\SecretSociety0.png" />
+    <Content Include="pics\menu\SecretSociety1.png" />
+    <Content Include="pics\menu\ShowTable0.png" />
+    <Content Include="pics\menu\ShowTable1.png" />
+    <Content Include="pics\menu\SimpleQuery0.png" />
+    <Content Include="pics\menu\SimpleQuery1.png" />
+    <Content Include="pics\menu\surv0.png" />
+    <Content Include="pics\menu\surv1.png" />
+    <Content Include="pics\michaeljackson0.jpg" />
+    <Content Include="pics\michaeljackson1.jpg" />
+    <Content Include="pics\michaeljackson2.jpg" />
+    <Content Include="pics\MKUltra0.png" />
+    <Content Include="pics\MKUltra1.png" />
+    <Content Include="pics\mosadDol.png" />
+    <Content Include="pics\mosadStoleShoe.png" />
+    <Content Include="pics\Paul Mccartney0.jpg" />
+    <Content Include="pics\Paul Mccartney1.jpg" />
+    <Content Include="pics\Paul Mccartney2.jpg" />
+    <Content Include="pics\Pizza Gate0.png" />
+    <Content Include="pics\Pizza Gate1.png" />
+    <Content Include="pics\presli0.jpg" />
+    <Content Include="pics\presli1.jpg" />
+    <Content Include="pics\presli2.jpg" />
+    <Content Include="pics\Rabin assassination0.jpg" />
+    <Content Include="pics\Rabin assassination1.jpg" />
+    <Content Include="pics\Rabin assassination2.jpg" />
+    <Content Include="pics\real stuff.png" />
+    <Content Include="pics\Space and aliens.png" />
+    <Content Include="pics\survery\blue.png" />
+    <Content Include="pics\survery\green.png" />
+    <Content Include="pics\survery\red.png" />
+    <Content Include="pics\survery\yellow.png" />
+    <Content Include="pics\up to date.jpg" />
+    <Content Include="PizzaGate.aspx" />
+    <Content Include="Politics.aspx" />
+    <Content Include="RabinAssassination.aspx" />
+    <Content Include="RealStuff.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="ScienceNtechnology.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="SecretSociety.aspx" />
+    <Content Include="ShowTable.aspx" />
+    <Content Include="SimpleQuery.aspx" />
+    <Content Include="Site.Master" />
+    <Content Include="SpaceNaliens.aspx" />
+    <Content Include="TenSteps.aspx" />
+    <Content Include="UpToDate.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AntisemiticConspiracies.aspx.cs">
+      <DependentUpon>AntisemiticConspiracies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AntisemiticConspiracies.aspx.designer.cs">
+      <DependentUpon>AntisemiticConspiracies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\Helper.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Area51.aspx.cs">
+      <DependentUpon>Area51.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Area51.aspx.designer.cs">
+      <DependentUpon>Area51.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BillGates.aspx.cs">
+      <DependentUpon>BillGates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BillGates.aspx.designer.cs">
+      <DependentUpon>BillGates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ComplexQuery.aspx.cs">
+      <DependentUpon>ComplexQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComplexQuery.aspx.designer.cs">
+      <DependentUpon>ComplexQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CompTry.aspx.cs">
+      <DependentUpon>CompTry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompTry.aspx.designer.cs">
+      <DependentUpon>CompTry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConspiracyM.Master.cs">
+      <DependentUpon>ConspiracyM.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConspiracyM.Master.designer.cs">
+      <DependentUpon>ConspiracyM.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Covid19.aspx.cs">
+      <DependentUpon>Covid19.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Covid19.aspx.designer.cs">
+      <DependentUpon>Covid19.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CultureNSociety.aspx.cs">
+      <DependentUpon>CultureNSociety.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CultureNSociety.aspx.designer.cs">
+      <DependentUpon>CultureNSociety.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CultureQuestions.aspx.cs">
+      <DependentUpon>CultureQuestions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CultureQuestions.aspx.designer.cs">
+      <DependentUpon>CultureQuestions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteRcord.aspx.cs">
+      <DependentUpon>DeleteRcord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteRcord.aspx.designer.cs">
+      <DependentUpon>DeleteRcord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteUser.aspx.cs">
+      <DependentUpon>DeleteUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteUser.aspx.designer.cs">
+      <DependentUpon>DeleteUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DonaldJTrump.aspx.cs">
+      <DependentUpon>DonaldJTrump.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DonaldJTrump.aspx.designer.cs">
+      <DependentUpon>DonaldJTrump.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EdwardSnowden.aspx.cs">
+      <DependentUpon>EdwardSnowden.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EdwardSnowden.aspx.designer.cs">
+      <DependentUpon>EdwardSnowden.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElonMusk.aspx.cs">
+      <DependentUpon>ElonMusk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElonMusk.aspx.designer.cs">
+      <DependentUpon>ElonMusk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElvisPresley.aspx.cs">
+      <DependentUpon>ElvisPresley.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElvisPresley.aspx.designer.cs">
+      <DependentUpon>ElvisPresley.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FlatEarth.aspx.cs">
+      <DependentUpon>FlatEarth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlatEarth.aspx.designer.cs">
+      <DependentUpon>FlatEarth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="galery.aspx.cs">
+      <DependentUpon>galery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="galery.aspx.designer.cs">
+      <DependentUpon>galery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HomeP.aspx.cs">
+      <DependentUpon>HomeP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeP.aspx.designer.cs">
+      <DependentUpon>HomeP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Illuminati.aspx.cs">
+      <DependentUpon>Illuminati.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Illuminati.aspx.designer.cs">
+      <DependentUpon>Illuminati.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImportantPersonalities.aspx.cs">
+      <DependentUpon>ImportantPersonalities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImportantPersonalities.aspx.designer.cs">
+      <DependentUpon>ImportantPersonalities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JohnFitzgeraldKennedy.aspx.cs">
+      <DependentUpon>JohnFitzgeraldKennedy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JohnFitzgeraldKennedy.aspx.designer.cs">
+      <DependentUpon>JohnFitzgeraldKennedy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JudaismNIsrael.aspx.cs">
+      <DependentUpon>JudaismNIsrael.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JudaismNIsrael.aspx.designer.cs">
+      <DependentUpon>JudaismNIsrael.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KimJongUn.aspx.cs">
+      <DependentUpon>KimJongUn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KimJongUn.aspx.designer.cs">
+      <DependentUpon>KimJongUn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LandingOnMoon.aspx.cs">
+      <DependentUpon>LandingOnMoon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LandingOnMoon.aspx.designer.cs">
+      <DependentUpon>LandingOnMoon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LizardPeople.aspx.cs">
+      <DependentUpon>LizardPeople.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LizardPeople.aspx.designer.cs">
+      <DependentUpon>LizardPeople.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.aspx.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogIn.aspx.designer.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogInAdmin.aspx.cs">
+      <DependentUpon>LogInAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogInAdmin.aspx.designer.cs">
+      <DependentUpon>LogInAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogOut.aspx.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogOut.aspx.designer.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="managarP.aspx.cs">
+      <DependentUpon>managarP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="managarP.aspx.designer.cs">
+      <DependentUpon>managarP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MichaelJackson.aspx.cs">
+      <DependentUpon>MichaelJackson.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MichaelJackson.aspx.designer.cs">
+      <DependentUpon>MichaelJackson.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MKUltra.aspx.cs">
+      <DependentUpon>MKUltra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MKUltra.aspx.designer.cs">
+      <DependentUpon>MKUltra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaulMccartney.aspx.cs">
+      <DependentUpon>PaulMccartney.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaulMccartney.aspx.designer.cs">
+      <DependentUpon>PaulMccartney.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PizzaGate.aspx.cs">
+      <DependentUpon>PizzaGate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PizzaGate.aspx.designer.cs">
+      <DependentUpon>PizzaGate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Politics.aspx.cs">
+      <DependentUpon>Politics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Politics.aspx.designer.cs">
+      <DependentUpon>Politics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RabinAssassination.aspx.cs">
+      <DependentUpon>RabinAssassination.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RabinAssassination.aspx.designer.cs">
+      <DependentUpon>RabinAssassination.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RealStuff.aspx.cs">
+      <DependentUpon>RealStuff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RealStuff.aspx.designer.cs">
+      <DependentUpon>RealStuff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ScienceNtechnology.aspx.cs">
+      <DependentUpon>ScienceNtechnology.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ScienceNtechnology.aspx.designer.cs">
+      <DependentUpon>ScienceNtechnology.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SecretSociety.aspx.cs">
+      <DependentUpon>SecretSociety.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SecretSociety.aspx.designer.cs">
+      <DependentUpon>SecretSociety.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowTable.aspx.cs">
+      <DependentUpon>ShowTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowTable.aspx.designer.cs">
+      <DependentUpon>ShowTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleQuery.aspx.cs">
+      <DependentUpon>SimpleQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SimpleQuery.aspx.designer.cs">
+      <DependentUpon>SimpleQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SpaceNaliens.aspx.cs">
+      <DependentUpon>SpaceNaliens.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SpaceNaliens.aspx.designer.cs">
+      <DependentUpon>SpaceNaliens.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TenSteps.aspx.cs">
+      <DependentUpon>TenSteps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TenSteps.aspx.designer.cs">
+      <DependentUpon>TenSteps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpToDate.aspx.cs">
+      <DependentUpon>UpToDate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpToDate.aspx.designer.cs">
+      <DependentUpon>UpToDate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61616</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44360/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
